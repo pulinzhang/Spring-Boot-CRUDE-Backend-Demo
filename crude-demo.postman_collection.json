@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "e963f418-8bb2-455b-837a-787cbd7ec2cd",
+		"name": "crude-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "52805223",
+		"_collection_link": "https://zhangpulin2011-5524913.postman.co/workspace/%E5%BC%A0%E6%99%AE%E6%9E%97's-Workspace~d2f8e235-5d34-4d3d-84d3-6e235f7a4c6e/collection/52805223-e963f418-8bb2-455b-837a-787cbd7ec2cd?action=share&source=collection_link&creator=52805223"
+	},
+	"item": [
+		{
+			"name": "list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"size\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v3/notificationlog/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v3",
+						"notificationlog",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "byid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[1, 2, 3]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v3/notificationlog/byid",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v3",
+						"notificationlog",
+						"byid"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findall",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v3/notificationlog/findall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v3",
+						"notificationlog",
+						"findall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"title\": \"Test Notification\",\r\n    \"body\": \"This is a test notification body\",\r\n    \"imageUrl\": \"https://example.com/image.jpg\",\r\n    \"clickAction\": \"OPEN_APP\",\r\n    \"platform\": \"ANDROID\",\r\n    \"deviceToken\": \"your-device-token-here\",\r\n    \"status\": \"PENDING\",\r\n    \"fcmMessageId\": \"msg-123\",\r\n    \"errorMessage\": null,\r\n    \"dataPayload\": \"{\\\"key\\\":\\\"value\\\"}\",\r\n    \"creator\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v3/notificationlog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v3",
+						"notificationlog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"userId\": 1,\r\n        \"createtime\": \"2026-03-01T10:30:00\",\r\n        \"title\": \"Updated Title\",\r\n        \"body\": \"Updated notification body\",\r\n        \"imageUrl\": \"https://example.com/new-image.jpg\",\r\n        \"clickAction\": \"OPEN_PROFILE\",\r\n        \"platform\": \"IOS\",\r\n        \"deviceToken\": \"updated-device-token\",\r\n        \"status\": \"SENT\",\r\n        \"fcmMessageId\": \"msg-123-updated\",\r\n        \"errorMessage\": null,\r\n        \"dataPayload\": \"{\\\"key\\\":\\\"updatedValue\\\"}\",\r\n        \"creator\": 1,\r\n        \"modifier\": 2\r\n    },\r\n    {\r\n        \"userId\": 2,\r\n        \"createtime\": \"2026-03-01T11:00:00\",\r\n        \"title\": \"Another Update\",\r\n        \"body\": \"Updated body for user 2\",\r\n        \"status\": \"FAILED\",\r\n        \"errorMessage\": \"Device token expired\",\r\n        \"creator\": 1,\r\n        \"modifier\": 2\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v3/notificationlog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v3",
+						"notificationlog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"userId\": 1,\r\n        \"createtime\": \"2026-03-01T10:30:00\"\r\n    },\r\n    {\r\n        \"userId\": 2,\r\n        \"createtime\": \"2026-03-01T11:00:00\"\r\n    },\r\n    {\r\n        \"userId\": 1,\r\n        \"createtime\": \"2026-02-28T15:45:00\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/v3/notificationlog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v3",
+						"notificationlog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "jasperreport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/v3/notificationlog/findall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"v3",
+						"notificationlog",
+						"findall"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
