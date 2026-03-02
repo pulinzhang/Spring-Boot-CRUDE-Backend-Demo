@@ -1,12 +1,12 @@
-# Spring Boot CRUDE  Backend Demo
+# Spring Boot CRUDE Backend Demo
 
-A professional Java Spring Boot backend demonstrating full CRUDE  operations, advanced search with pagination, and JasperReports integration.
+A professional Java Spring Boot backend demonstrating full CRUDE operations, advanced search with pagination, and JasperReports integration.
 
 ---
 
 ## Features Implemented
 
-### ✅ CRUDE  Operations
+### ✅ CRUDE Operations
 - **Create** - Single and batch record creation
 - **Read** - Query single/multiple records with advanced filtering
 - **Update** - Single and batch updates
@@ -31,7 +31,7 @@ A professional Java Spring Boot backend demonstrating full CRUDE  operations, ad
 
 ## Demo Example: NotificationLog Table
 
-This demo implements a complete CRUDE  for `notificationlog` table with:
+This demo implements a complete CRUDE for `notificationlog` table with:
 
 - **Composite Primary Key**: (userId, createtime)
 - **24 Fields**: Including title, body, platform, status, device token, FCM message ID, etc.
@@ -126,6 +126,32 @@ GET /api/v3/report/notificationlog/pdf
 
 ---
 
+## Postman Test Screenshots
+
+Below are the Postman test screenshots for each API endpoint:
+
+| Test | Description | Screenshot |
+|------|-------------|------------|
+| 01 | Search with Pagination | `docs/postman/01_list.png` |
+| 02 | Get by Composite ID | `docs/postman/02_byid.png` |
+| 03 | Get All Records | `docs/postman/03_findall.png` |
+| 04 | Create Record | `docs/postman/04_create.png` |
+| 05 | Update Records (Batch) | `docs/postman/05_update.png` |
+| 06 | Delete Records (Batch) | `docs/postman/06_delete.png` |
+| 07 | Export PDF Report | `docs/postman/07_pdf_export.png` |
+
+---
+
+## Database Schema
+
+### Part1: Identify the Table on the DB with Primary Keys
+
+Before coding, analyze the table structure to identify primary keys and fields:
+
+![Database Schema](docs/postman/00-db-schema.png)
+
+---
+
 ## Project Structure
 
 ```
@@ -184,7 +210,7 @@ Server: `http://localhost:8081`
 
 | Service | Description |
 |---------|-------------|
-| CRUDE  per table | Full CRUDE  with composite keys, ~24 fields average |
+| CRUDE per table | Full CRUDE with composite keys, ~24 fields average |
 | JasperReport | PDF export with custom template |
 | Search/Filter | Advanced multi-field search with pagination |
 | Database | MySQL, PostgreSQL, or H2 |
